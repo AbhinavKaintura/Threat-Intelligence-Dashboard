@@ -1,0 +1,60 @@
+{
+  "iocs": [
+    {
+      "id": "ioc-001",
+      "value": "192.168.1.100",
+      "type": "ip",
+      "source": "blocklist.de",
+      "timestamp": "2025-09-06T10:30:00Z",
+      "severity": "high",
+      "description": "Malicious IP detected in botnet activity",
+      "confidence": 85,
+      "tags": ["botnet", "malware"],
+      "firstSeen": "2025-09-05T14:22:00Z",
+      "lastSeen": "2025-09-06T10:30:00Z"
+    },
+    {
+      "id": "ioc-002", 
+      "value": "10.0.0.0/8",
+      "type": "subnet",
+      "source": "spamhaus",
+      "timestamp": "2025-09-06T09:15:00Z",
+      "severity": "medium",
+      "description": "Suspicious subnet range identified",
+      "confidence": 72,
+      "tags": ["suspicious", "scanning"]
+    },
+    {
+      "id": "ioc-003",
+      "value": "https://malicious-domain.com/payload.exe",
+      "type": "url",
+      "source": "digitalside",
+      "timestamp": "2025-09-06T08:45:00Z", 
+      "severity": "critical",
+      "description": "Malware download URL active",
+      "confidence": 95,
+      "tags": ["malware", "trojan", "active"]
+    },
+    {
+      "id": "ioc-004",
+      "value": "203.0.113.50",
+      "type": "ip", 
+      "source": "blocklist.de",
+      "timestamp": "2025-09-06T07:20:00Z",
+      "severity": "low",
+      "description": "IP flagged for suspicious activity",
+      "confidence": 60
+    },
+    {
+      "id": "ioc-005",
+      "value": "example-threat.org",
+      "type": "domain",
+      "source": "digitalside", 
+      "timestamp": "2025-09-06T06:10:00Z",
+      "severity": "high",
+      "description": "Command and control domain",
+      "confidence": 88,
+      "tags": ["c2", "apt"]
+    }
+  ]
+}
