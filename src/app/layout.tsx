@@ -2,12 +2,14 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
+import { ToastContainer } from '@/components/ui/Toast'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Threat Intelligence Dashboard',
-  description: 'Professional security operations center dashboard for threat intelligence monitoring',
+  title: 'ThreatIntel Dashboard - Security Operations Center',
+  description: 'Professional threat intelligence monitoring and analysis platform for security operations teams.',
+  keywords: 'threat intelligence, cybersecurity, IOC, security operations center, malware analysis',
 }
 
 export default function RootLayout({
@@ -25,6 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <ToastContainer />
         </ThemeProvider>
       </body>
     </html>
