@@ -3,7 +3,7 @@
 A professional threat intelligence monitoring platform built with Next.js, TypeScript, and modern UI components.
 
 ## Deployment: 
-threat-intelligence-dashboard-i293.vercel.app
+[Threat Intelligence Dashboard Deployment](https://threat-intelligence-dashboard-i293.vercel.app)
 
 ## ✨ Features
 
