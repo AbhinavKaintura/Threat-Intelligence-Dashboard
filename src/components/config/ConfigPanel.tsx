@@ -38,13 +38,13 @@ export function ConfigPanel({ onSave }: ConfigPanelProps) {
       items: [
         {
           label: "Auto Refresh",
-          type: "toggle",
+          type: "toggle" as const,
           value: config.autoRefresh,
           onChange: (value: boolean) => setConfig(prev => ({ ...prev, autoRefresh: value }))
         },
         {
           label: "Refresh Interval (minutes)",
-          type: "number",
+          type: "number" as const,
           value: config.refreshInterval,
           onChange: (value: number) => setConfig(prev => ({ ...prev, refreshInterval: value }))
         }
@@ -56,7 +56,7 @@ export function ConfigPanel({ onSave }: ConfigPanelProps) {
       items: [
         {
           label: "Items per page",
-          type: "select",
+          type: "select" as const,
           value: config.itemsPerPage,
           options: [10, 25, 50, 100],
           onChange: (value: number) => setConfig(prev => ({ ...prev, itemsPerPage: value }))
@@ -69,7 +69,7 @@ export function ConfigPanel({ onSave }: ConfigPanelProps) {
       items: [
         {
           label: "Enable Notifications",
-          type: "toggle",
+          type: "toggle" as const,
           value: config.enableNotifications,
           onChange: (value: boolean) => setConfig(prev => ({ ...prev, enableNotifications: value }))
         }

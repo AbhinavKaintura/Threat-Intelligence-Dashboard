@@ -8,14 +8,14 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export async function GET() {
   try {
-    console.log('=== IOC API Route Called ===');
+    // console.log('=== IOC API Route Called ===');
     
     // Simulate network delay
     await delay(800);
 
     // Read the mock data file from the public directory
     const filePath = path.join(process.cwd(), 'public', 'mock-data', 'threat-feeds.json');
-    console.log('Reading threat intelligence data from:', filePath);
+    // console.log('Reading threat intelligence data from:', filePath);
     
     // Check if file exists
     if (!fs.existsSync(filePath)) {
