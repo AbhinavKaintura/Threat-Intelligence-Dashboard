@@ -28,10 +28,15 @@ npm start
 
 src/
 ├── app/ # Next.js App Router
+
 ├── components/ # Reusable UI components
+
 ├── store/ # Zustand state management
+
 ├── types/ # TypeScript definitions
+
 ├── lib/ # Utility functions
+
 └── hooks/ # Custom React hooks
 
 
