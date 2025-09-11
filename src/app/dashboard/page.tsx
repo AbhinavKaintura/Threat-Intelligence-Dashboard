@@ -30,6 +30,8 @@ export default function DashboardPage() {
     }
   }, [])
 
+  console.log("Rendering DashboardPage with IOCs:", iocs)
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

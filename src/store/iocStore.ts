@@ -29,6 +29,7 @@ interface IOCStore {
   
   // Internal methods
   applyFiltersAndSort: () => void;
+  applyPagination: () => void;
   calculateStats: () => void;
 }
 
@@ -126,14 +127,20 @@ export const useIOCStore = create<IOCStore>()(
             setLoading(true);
             setError(null);
             
+            console.log('Fetching IOCs from /api/iocs...');
             const response = await fetch('/api/iocs');
             if (!response.ok) {
-              throw new Error('Failed to fetch IOCs');
+              throw new Error(`Failed to fetch IOCs: ${response.status} ${response.statusText}`);
             }
             
             const data = await response.json();
-            setIOCs(data.iocs || []);
+            console.log('Received IOCs data:', data);
+            
+            // Handle both possible response structures
+            const iocs = data.iocs || data.data || [];
+            setIOCs(iocs);
           } catch (error) {
+            console.error('Error in refreshData:', error);
             setError(error instanceof Error ? error.message : 'Unknown error');
           } finally {
             setLoading(false);
@@ -273,6 +280,11 @@ function applySorting(iocs: IOC[], sort: SortOptions): IOC[] {
       aVal = aVal.toLowerCase();
       bVal = bVal.toLowerCase();
     }
+
+    // Handle undefined/null values
+    if (aVal == null && bVal == null) return 0;
+    if (aVal == null) return sort.direction === 'asc' ? 1 : -1;
+    if (bVal == null) return sort.direction === 'asc' ? -1 : 1;
 
     if (aVal < bVal) return sort.direction === 'asc' ? -1 : 1;
     if (aVal > bVal) return sort.direction === 'asc' ? 1 : -1;
