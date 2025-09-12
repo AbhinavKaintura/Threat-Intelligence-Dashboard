@@ -2,6 +2,9 @@
 
 A professional threat intelligence monitoring platform built with Next.js, TypeScript, and modern UI components.
 
+## Deployment: 
+[Threat Intelligence Dashboard Deployment](https://threat-intelligence-dashboard-i293.vercel.app)
+
 ## ✨ Features
 
 - **Real-time Threat Monitoring** - Track IOCs from multiple sources
@@ -28,10 +31,15 @@ npm start
 
 src/
 ├── app/ # Next.js App Router
+
 ├── components/ # Reusable UI components
+
 ├── store/ # Zustand state management
+
 ├── types/ # TypeScript definitions
+
 ├── lib/ # Utility functions
+
 └── hooks/ # Custom React hooks
 
 
