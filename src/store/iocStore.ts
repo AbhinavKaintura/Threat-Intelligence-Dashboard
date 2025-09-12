@@ -47,7 +47,7 @@ const initialSort: SortOptions = {
 
 const initialPagination: PaginationOptions = {
   page: 1,
-  limit: 25,
+  limit: 15,
   total: 0,
 };
 
